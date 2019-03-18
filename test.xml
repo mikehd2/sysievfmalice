@@ -1,31 +1,17 @@
 <context>
+    <input pattern="(hi|hello) *">
+        <!-- Greet the user if we know his/her name -->
+        <output value="Hello $UserName!" if="full($UserName)"/>
 
-    <sample>
-        <item value="Кто такой Сысоев"/>
-        <item value="Что такое СысоевФМ"/>
-    </sample>
-
-    <input pattern="* (привет*|здравствуй*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться...  Что тебя интересует?"/>
-        </output>
-
-        <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - навык, который поможет тебе вкусно и хорошо поесть и выпить в Москве. Как тебя зовут?"/>
+        <!-- Or activate an inner context to ask the user about his/her name -->
+        <context if="empty($UserName)" modal="true"> <!-- We use a modal context, so our bot will recognize any text as the user’s name -->
+            <output value="Hi! What is your name?"/>
 
             <input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Что тебя интересует? Например: где позавтракать?"/>
-                <context/>
+                <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
+                <var name="UserName" value="$Text" scope="user"/>
+                <output value="Nice to meet you, $UserName!"/> <!-- Using the placeholder in output -->
             </input>
         </context>
     </input>
-
-    <input pattern="* пока *">
-        <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
-    </input>
-
 </context>
