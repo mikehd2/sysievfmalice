@@ -16,7 +16,7 @@
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Что тебя интересует? Например: 'где позавтракать?'"/>
+                <output value="Приятно познакомиться, $UserName! Что тебя интересует? Например: где позавтракать?"/>
                 <context/>
             </input>
         </context>
