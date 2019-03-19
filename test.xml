@@ -135,9 +135,9 @@
 
     <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (рыба*|рыбы*|рыбные*|рыбный*|морепродукты*|морепродуктами*) *">
         <context id="fishes">
-            <output value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. Wine&Crab\n8. Рыбторг"/>
-            <var name="tts" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. Wine&Crab\n8. Рыбторг"/>
-            <var name="text" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. Wine&Crab\n8. Рыбторг"/>
+            <output value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
+            <var name="tts" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
+            <var name="text" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
         </context>
     </input>
 
