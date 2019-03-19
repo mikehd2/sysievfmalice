@@ -1,21 +1,6 @@
 <context>
 
-    <sample>
-        <item value="Кто такой Сысоев"/>
-        <item value="Что такое СысоевФМ"/>
-    </sample>
-
-    <input pattern="* Кто такой Сысоев *">
-        <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-         <var name="tts" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-         <var name="text" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-    </input>
-
-    <input pattern="* Кто такой Сысоев *">
-        <output value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-         <var name="tts" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-         <var name="text" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-    </input>
+    <!-- Start -->
 
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
@@ -33,6 +18,39 @@
             </input>
         </context>
     </input>
+
+    <!-- Bottoms Buttons -->
+
+    <sample>
+        <item value="Кто такой Сысоев"/>
+        <item value="Что такое СысоевФМ"/>
+    </sample>
+
+    <input pattern="* Кто такой Сысоев *">
+        <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+         <var name="tts" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+         <var name="text" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+    </input>
+
+    <input pattern="* Кто такой Сысоев *">
+        <output value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+         <var name="tts" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+         <var name="text" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+    </input>
+
+    <input pattern="* Что такое СысоевФМ *">
+        <output value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+         <var name="tts" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+         <var name="text" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+    </input>
+
+    <input pattern="* Что такое СысоевФМ *">
+        <output value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+         <var name="tts" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+         <var name="text" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+    </input>
+
+    <!-- Exit -->
 
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
