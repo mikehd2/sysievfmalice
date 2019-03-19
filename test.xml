@@ -6,9 +6,15 @@
     </sample>
 
     <input pattern="* Кто такой Сысоев *">
-        <output value="Сысоев это Александр Сысоев..."/>
-         <var name="tts" value="Сысоев это Александр Сысоев..."/>
-         <var name="text" value="Сысоев это Александр Сысоев..."/>
+        <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+         <var name="tts" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+         <var name="text" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+    </input>
+
+    <input pattern="* Кто такой Сысоев *">
+        <output value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+         <var name="tts" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+         <var name="text" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
     </input>
 
     <input pattern="* (привет*|здравствуй*) *">
