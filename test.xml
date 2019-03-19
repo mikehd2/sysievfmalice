@@ -1,13 +1,17 @@
 <context>
 
     <sample>
-        <item value="Кто такой Сысоев" text="Кто такой Сысоев"/>
-        <item value="Что такое СысоевФМ" text="Что такое СысоевФМ"/>
+        <item value="Кто такой Сысоев"/>
+        <item value="Что такое СысоевФМ"/>
     </sample>
 
     <input pattern="* Кто такой Сысоев *">
         <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+         <var name="tts" value="Сысоев это Александр Сысоев..."/>
+         <var name="text" value="Сысоев это Александр Сысоев..."/>
         <output value="Слушай, $UserName, Сысоев это Александр Сысоев..."/>
+         <var name="tts" value="Слушай, $UserName, Сысоев это Александр Сысоев..."/>
+         <var name="text" value="Слушай, $UserName, Сысоев это Александр Сысоев..."/>
     </input>
 
     <input pattern="* (привет*|здравствуй*) *">
