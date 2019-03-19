@@ -29,7 +29,7 @@
         </context>
     </input>
 
-    <input pattern="* бранч *">
+    <input pattern="* (где*|что*) * (бранч*|бранчи*) *">
         <context id="branches">
             <output value="Лучшие бранчи москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
             <var name="tts" value="Лучшие бранчи москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
