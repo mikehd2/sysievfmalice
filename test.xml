@@ -8,176 +8,179 @@
         <var name="text" value="СысоевФМ в Алиса.Диалоги: скажи мне 'привет' :)"/>
     </input>
 
+    <context>
     <!-- Hello word -->
 
-    <input pattern="* (привет*|здравствуй*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться...  Что тебя интересует?"/>
-        </output>
+        <input pattern="* (привет*|здравствуй*) *">
+            <output if="full($UserName)">
+                <item value="Привет, $UserName! Рада снова видеть тебя!"/>
+                <item value="Здравствуй, $UserName! Я уже успела соскучиться...  Что тебя интересует?"/>
+            </output>
 
-        <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - навык, который поможет тебе вкусно и хорошо поесть и выпить в Москве. Как тебя зовут?"/>
+            <context if="empty($UserName)" id="name">
+                <output value="Привет! Меня зовут Алиса! А это - навык, который поможет тебе вкусно и хорошо поесть и выпить в Москве. Как тебя зовут?"/>
 
-            <input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Что тебя интересует? Например: где позавтракать?"/>
-                <context/>
-            </input>
-        </context>
-    </input>
+                <input pattern="$Text">
+                    <var name="UserName" value="cap($Text)" scope="user"/>
+                    <output value="Приятно познакомиться, $UserName! Что тебя интересует? Например: где позавтракать?"/>
+                    <context/>
+                </input>
+            </context>
+        </input>
 
-    <!-- Where is Cases -->
+        <!-- Where is Cases -->
 
-    <input pattern="* где позавтракать *">
-        <context id="severyane">
-            <output value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
-            <var name="tts" value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
-            <var name="text" value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
-        </context>
-    </input>
+        <input pattern="* где позавтракать *">
+            <context id="severyane">
+                <output value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
+                <var name="tts" value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
+                <var name="text" value="Северяне \nЭтот ресторан Ильи Тютенкова – проект из категории «роял-флэш». Прекрасно все: потусторонний мрак в интерьере Натальи Белоноговой, порхающие свечи и русские печи, официанты в супрематических черно-красных одеждах и кухня Георгия Трояна, одного из лучших молодых шефов столицы. Завтраки в «Северянах» – выдающиеся. Им посвящают стихи и хэштеги. Всего около 10 позиций, зато что ни блюдо, то хит: будь то гречка с пармезаном, запеканка из печи или омлет из краба. Стартуют в 9:00 и продолжаются до 16:00."/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бранч*|бранчи*) *">
-        <context id="branches">
-            <output value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-            <var name="tts" value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-            <var name="text" value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бранч*|бранчи*) *">
+            <context id="branches">
+                <output value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+                <var name="tts" value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+                <var name="text" value="Лучшие бранчи Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (новый*|новые*|открытия*|открытие*) *">
-        <context id="openings">
-            <output value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-            <var name="tts" value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-            <var name="text" value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (новый*|новые*|открытия*|открытие*) *">
+            <context id="openings">
+                <output value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+                <var name="tts" value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+                <var name="text" value="Лучшие новые рестораны Москвы:\n1. Восход\n2. Saxon+Parole\n3. Leveldva\n4. Ararat Hyatt\n5. Dante\n6. Tilda"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бар*|бары*|бара*|выпить*|алкоголь*|коктейль*) *">
-        <context id="bars">
-            <output value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
-            <var name="tts" value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
-            <var name="text" value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бар*|бары*|бара*|выпить*|алкоголь*|коктейль*) *">
+            <context id="bars">
+                <output value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
+                <var name="tts" value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
+                <var name="text" value="Лучшие бары Москвы:\n1. Чайная\n2. Коробок\n3. Антикварный\n4. Нур\n5. Веладора\n6. Бамбуле\n7. Клава\n8. Симачев\n9. HappyEnd\n10. Delicatessen\n11. Black Hat\n12. Mendeleev"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (рынок*|рынки*|рынка*) *">
-        <context id="markets">
-            <output value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
-            <var name="tts" value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
-            <var name="text" value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (рынок*|рынки*|рынка*) *">
+            <context id="markets">
+                <output value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
+                <var name="tts" value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
+                <var name="text" value="Лучшие бары Москвы:\n1. Streat\n2. Даниловский\n3. Центральный\n4. Усачевский\n5. EatMarket\n6. Драгомиловский"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (итальянских*|итальянский*|италия*|италии*|италие*) *">
-        <context id="italian">
-            <output value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
-            <var name="tts" value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
-            <var name="text" value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (итальянских*|итальянский*|италия*|италии*|италие*) *">
+            <context id="italian">
+                <output value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
+                <var name="tts" value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
+                <var name="text" value="Лучшие бары Москвы:\n1. Семифреддо\n2. Пробка\n3. Иль форно\n4. Кристиан\n5. Mad cook\n6. Salumeria\n7. Italy"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (русские*|русских*|рус*) *">
-        <context id="russians">
-            <output value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
-            <var name="tts" value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
-            <var name="text" value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (русские*|русских*|рус*) *">
+            <context id="russians">
+                <output value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
+                <var name="tts" value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
+                <var name="text" value="Лучшие бары Москвы:\n1. Пушкин\n2. Ruski\n3. СибирьСибирь\n4. Матрешка\n5. Ухват\n6. Живаго\n7. Белуга"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (атмосферные*|атмосфера*|атмосферы*|лампово*|ламповый*|ламповые*) *">
-        <context id="atmoshpers">
-            <output value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
-            <var name="tts" value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
-            <var name="text" value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (атмосферные*|атмосфера*|атмосферы*|лампово*|ламповый*|ламповые*) *">
+            <context id="atmoshpers">
+                <output value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
+                <var name="tts" value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
+                <var name="text" value="Лучшие атмосферные рестораны Москвы:\n1. Северяне\n2. Горыныч"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (мясо*|мясные*|мясной*|мяса*) *">
-        <context id="meats">
-            <output value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
-            <var name="tts" value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
-            <var name="text" value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (мясо*|мясные*|мясной*|мяса*) *">
+            <context id="meats">
+                <output value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
+                <var name="tts" value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
+                <var name="text" value="Лучшие рестораны с мясом:\n1. Max’s Beef For Money\n2. Торро гриль\n3. Carne\n4. Горыныч\n5. Мясные дилеры"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (грузинский*|грузинские*|грузинская*|грузия*|грузии*) *">
-        <context id="georgians">
-            <output value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
-            <var name="tts" value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
-            <var name="text" value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (грузинский*|грузинские*|грузинская*|грузия*|грузии*) *">
+            <context id="georgians">
+                <output value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
+                <var name="tts" value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
+                <var name="text" value="Лучшие грузинские рестораны Москвы:\n1. Казбек\n2. Вани\n3. Сахли"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (винный*|вино*|вина*|вин*) *">
-        <context id="wines">
-            <output value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
-            <var name="tts" value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
-            <var name="text" value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (винный*|вино*|вина*|вин*) *">
+            <context id="wines">
+                <output value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
+                <var name="tts" value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
+                <var name="text" value="Лучшие винные бары:\n1. Grand Cru\n2. Big Wine Freaks\n3. Хлеб и Вино\n4. Twins Wine Space"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бургер*|бургера*|бургеры*|бургерная*|бургерный*|бургерами*) *">
-        <context id="burgers">
-            <output value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
-            <var name="tts" value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
-            <var name="text" value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (бургер*|бургера*|бургеры*|бургерная*|бургерный*|бургерами*) *">
+            <context id="burgers">
+                <output value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
+                <var name="tts" value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
+                <var name="text" value="Лучшие бургеры в Москве:\n1. Remy Kitchen\n2. Брюссель\n3. Saxon+Parole\n4. Воронеж\n5. Фарш"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (паназиатские*|паназиатский*|паназиатское*|паназия*|азиатский*|азиатские*|азиатская|азиатское**) *">
-        <context id="panasians">
-            <output value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
-            <var name="tts" value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
-            <var name="text" value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (паназиатские*|паназиатский*|паназиатское*|паназия*|азиатский*|азиатские*|азиатская|азиатское**) *">
+            <context id="panasians">
+                <output value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
+                <var name="tts" value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
+                <var name="text" value="Лучшие паназиатские рестораны Москвы:\n1. Cutfish\n2. Lucky\n3. Ku:"/>
+            </context>
+        </input>
 
-    <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (рыба*|рыбы*|рыбные*|рыбный*|морепродукты*|морепродуктами*) *">
-        <context id="fishes">
-            <output value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
-            <var name="tts" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
-            <var name="text" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
-        </context>
-    </input>
+        <input pattern="* (где*|что*|хочу*|поесть*|есть*) * (рыба*|рыбы*|рыбные*|рыбный*|морепродукты*|морепродуктами*) *">
+            <context id="fishes">
+                <output value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
+                <var name="tts" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
+                <var name="text" value="Лучшие рестораны с морепродуктами:\n1. Lure\n2. Umi\n3. Рыба моя\n4. Бостон\n5. Erwin\n6. Сахалин\n7. WineCrab\n8. Рыбторг"/>
+            </context>
+        </input>
 
-    <!-- Bottoms Buttons -->
+        <!-- Bottoms Buttons -->
 
-    <sample>
-        <item value="Кто такой Сысоев"/>
-        <item value="Что такое СысоевФМ"/>
-    </sample>
+        <sample>
+            <item value="Кто такой Сысоев"/>
+            <item value="Что такое СысоевФМ"/>
+        </sample>
 
-    <input pattern="* Кто такой Сысоев *">
-        <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-         <var name="tts" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-         <var name="text" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
-    </input>
+        <input pattern="* Кто такой Сысоев *">
+            <output value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+             <var name="tts" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+             <var name="text" value="Сысоев это Александр Сысоев..." if="empty($UserName)"/>
+        </input>
 
-    <input pattern="* Кто такой Сысоев *">
-        <output value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-         <var name="tts" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-         <var name="text" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
-    </input>
+        <input pattern="* Кто такой Сысоев *">
+            <output value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+             <var name="tts" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+             <var name="text" value="$UserName, Сысоев это Александр Сысоев..." if="full($UserName)"/>
+        </input>
 
-    <input pattern="* Что такое СысоевФМ *">
-        <output value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
-         <var name="tts" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
-         <var name="text" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
-    </input>
+        <input pattern="* Что такое СысоевФМ *">
+            <output value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+             <var name="tts" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+             <var name="text" value="СысоевФМ это Сысоев..." if="empty($UserName)"/>
+        </input>
 
-    <input pattern="* Что такое СысоевФМ *">
-        <output value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
-         <var name="tts" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
-         <var name="text" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
-    </input>
+        <input pattern="* Что такое СысоевФМ *">
+            <output value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+             <var name="tts" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+             <var name="text" value="$UserName, СысоевФМ это Сысоев..." if="full($UserName)"/>
+        </input>
 
-    <!-- Exit -->
+        <!-- Exit -->
 
-    <input pattern="* пока *">
-        <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
-    </input>
+        <input pattern="* пока *">
+            <var name="end_session" value="javascript: true"/>
+            <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+            <output value="Пока-пока, $UserName!"/>
+        </input>
+        
+    </context>
 
 </context>
