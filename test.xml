@@ -1,10 +1,14 @@
 <context>
 
-    <output value="СысоевФМ в Алиса.Диалоги"/>
-    <var name="tts" value="СысоевФМ в Алиса.Диалоги"/>
-    <var name="text" value="СысоевФМ в Алиса.Диалоги"/>
-
     <!-- Start -->
+
+    <input pattern="*">
+        <output value="СысоевФМ в Алиса.Диалоги"/>
+        <var name="tts" value="СысоевФМ в Алиса.Диалоги"/>
+        <var name="text" value="СысоевФМ в Алиса.Диалоги"/>
+    </input>
+
+    <!-- Hello word -->
 
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
